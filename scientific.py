@@ -90,9 +90,8 @@ class App:
         return math.degrees(math.atan(num))
 
     def click(self, op, sym=''):
-        print(len(self.display.cget('text')))
         if op not in ['b', 'c']:
-            if len(self.display.cget('text')) == 14:
+            if len(self.display.cget('text')) == 23:
                 return
             self.expression.append(op)
             if sym:
@@ -114,6 +113,7 @@ class App:
         try:
             self.res = eval(''.join([str(x) for x in self.expression]))
             self.last_res = self.res
+            self.res = round(self.res, 5)
             # turn ints with decimal points into ints
             if self.res - int(self.res) == 0:
                 self.res = int(self.res)

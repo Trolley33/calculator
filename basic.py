@@ -42,7 +42,6 @@ class App:
         self.root.mainloop()
 
     def click(self, op, sym=''):
-        print(len(self.display.cget('text')))
         if op not in ['b', 'c']:
             if len(self.display.cget('text')) == 14:
                 return
